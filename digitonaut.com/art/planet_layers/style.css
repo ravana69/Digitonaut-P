@@ -1,0 +1,70 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  font-family: Arial;
+  color: white;
+}
+
+.bg_red {
+  background: #3F0000;
+  background: radial-gradient(circle, #8E0000 0%, #3F0000 100%);
+}
+
+.bg_black {
+  background: #000000;
+  background: radial-gradient(circle, #282828 0%, #000000 100%);
+}
+
+a:link, a:hover, a:visited, a:active {
+  color: white;
+  text-decoration: none;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.experiment-url {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 8px;
+  z-index: 1;
+  font-size: 11px;
+  background: black;
+  letter-spacing: 0.5px;
+  border: 1px solid white;
+}
+
+.theme_menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  z-index: 1;
+}
+
+.theme_btn {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid white;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.theme_btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<!-- Mirrored from digitonaut.com/art/pixies_planet/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:50:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset='utf-8'\>
+<meta name='apple-mobile-web-app-capable' content='yes'><meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'><title>Pixies Planet</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="container"></div>	
+
+<!-- GLSL SCRIPT -->
+<!-- vertex shader -->
+<script id="vertexShader" type="x-shader/x-vertex">
+	void main() {
+		gl_Position = vec4(position, 1.0);
+	}
+</script>
+
+<!-- fragment shader -->
+<script id="fragmentShader" type="x-shader/x-fragment">
+		#define TWO_PI 6.28318530718
+		#define EPSILON 0.000011
+		uniform vec2 resolution;
+		uniform float time;
+		uniform vec2 colsrows;
+		uniform vec2 mouse;
+	
+		float HueToRGB(float f1, float f2, float hue)
+		{
+			if (hue < 0.0)
+				hue += 1.0;
+			else if (hue > 1.0)
+				hue -= 1.0;
+			float res;
+			if ((6.0 * hue) < 1.0)
+				res = f1 + (f2 - f1) * 6.0 * hue;
+			else if ((2.0 * hue) < 1.0)
+				res = f2;
+			else if ((3.0 * hue) < 2.0)
+				res = f1 + (f2 - f1) * ((2.0 / 3.0) - hue) * 6.0;
+			else
+				res = f1;
+			return res;
+		}
+
+
+		vec3 HSLToRGB(vec3 hsl)
+		{
+			vec3 rgb;
+
+			if (hsl.y == 0.0)
+				rgb = vec3(hsl.z); // Luminance
+			else
+			{
+				float f2;
+
+				if (hsl.z < 0.5)
+					f2 = hsl.z * (1.0 + hsl.y);
+				else
+					f2 = (hsl.z + hsl.y) - (hsl.y * hsl.z);
+
+				float f1 = 2.0 * hsl.z - f2;
+
+				rgb.r = HueToRGB(f1, f2, hsl.x + (1.0/4.5));
+				rgb.g = HueToRGB(f1, f2, hsl.x);
+				rgb.b= HueToRGB(f1, f2, hsl.x - (1.0/7.0));
+			}
+
+			return rgb;
+		}
+	
+		mat2 rotate2d(float _angle){
+			return mat2(cos(_angle),-sin(_angle),
+						sin(_angle),cos(_angle));
+		}
+		
+		vec2 rotateFrom(vec2 uv, vec2 center, float angle){
+			vec2 uv_ = uv - center;
+			uv_ =  rotate2d(angle) * uv_;
+			uv_ = uv_ + center;
+
+			return uv_;
+		}
+		
+		float random(float value){
+			return fract(sin(value) * 43758.5453123);
+		}
+		
+		float random(vec2 tex){
+			return fract(sin(dot(tex.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+		}
+		
+		vec2 random2D(vec2 uv){
+			uv = vec2(dot(uv, vec2(127.1, 311.7)), dot(uv, vec2(269.5, 183.3)));
+			//return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+			return fract(tan(uv) * 43758.5453123); //return without offset on x, y
+		}
+
+		vec3 random3D(vec3 uv){
+			uv = vec3(dot(uv, vec3(127.1, 311.7, 120.9898)), dot(uv, vec3(269.5, 183.3, 150.457)), dot(uv, vec3(380.5, 182.3, 170.457)));
+			return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+		}
+	
+		float cubicCurve(float value){
+			return value * value * (3.0 - 2.0 * value); // custom cubic curve
+		}
+
+		vec2 cubicCurve(vec2 value){
+			return value * value * (3.0 - 1.0 * value); // custom cubic curve
+		}
+
+		vec3 cubicCurve(vec3 value){
+			return value * value * (3.0 - 2.0 * value); // custom cubic curve
+		}
+
+		float noise(vec2 uv){
+			vec2 iuv = floor(uv);
+			vec2 fuv = fract(uv);
+			vec2 suv = cubicCurve(fuv);
+
+			float dotAA_ = dot(random2D(iuv + vec2(0.0)), fuv - vec2(0.0));
+			float dotBB_ = dot(random2D(iuv + vec2(1.0, 0.0)), fuv - vec2(1.0, 0.0));
+			float dotCC_ = dot(random2D(iuv + vec2(0.0, 1.0)), fuv - vec2(0.0, 1.0));
+			float dotDD_ = dot(random2D(iuv + vec2(1.0, 1.0)), fuv - vec2(1.0, 1.0));
+
+			return mix(
+				mix(dotAA_, dotBB_,	suv.x),
+				mix(dotCC_, dotDD_, suv.x),
+				suv.y);
+		}
+
+		float noise(vec3 uv){
+			vec3 iuv = floor(uv);
+			vec3 fuv = fract(uv);
+			vec3 suv = cubicCurve(fuv);
+
+			float dotAA_ = dot(random3D(iuv + vec3(0.0)), fuv - vec3(0.0));
+			float dotBB_ = dot(random3D(iuv + vec3(1.0, 0.0, 0.0)), fuv - vec3(1.0, 0.0, 0.0));
+			float dotCC_ = dot(random3D(iuv + vec3(0.0, 1.0, 0.0)), fuv - vec3(0.0, 1.0, 0.0));
+			float dotDD_ = dot(random3D(iuv + vec3(1.0, 1.0, 0.0)), fuv - vec3(1.0, 1.0, 0.0));
+
+			float dotEE_ = dot(random3D(iuv + vec3(0.0, 0.0, 1.0)), fuv - vec3(0.0, 0.0, 1.0));
+			float dotFF_ = dot(random3D(iuv + vec3(1.0, 0.0, 1.0)), fuv - vec3(1.0, 0.0, 30.0));
+			float dotGG_ = dot(random3D(iuv + vec3(0.0, 1.0, 1.0)), fuv - vec3(0.0, 1.0, 1.0));
+			float dotHH_ = dot(random3D(iuv + vec3(1.0, 1.0, 1.0)), fuv - vec3(1.0, 1.0, 1.0));
+
+			float passH0 = mix(
+				mix(dotAA_, dotBB_,	suv.x),
+				mix(dotCC_, dotDD_, suv.x),
+				suv.y);
+
+			float passH1 = mix(
+				mix(dotEE_, dotFF_,	suv.x),
+				mix(dotGG_, dotHH_, suv.x),
+				suv.y);
+
+			return mix(passH0, passH1, suv.z);
+		}
+	
+		float drawLine(vec2 uv, vec2 p1, vec2 p2, float r)
+		{
+			//from https://www.shadertoy.com/view/MtlSDr
+			vec2 l = p2 - p1;
+			float L = length(l);
+			float L2 = L*L;
+
+			float d1 = length(uv - p1);
+			float d2 = length(uv - p2);
+			float d  = min(d1, d2);
+			float ds = dot(uv - p1, l);
+			if (ds >= 0.0 && ds <= L2)
+			{
+				vec2 n = vec2(-l.y, l.x) / L;
+				d = min(d, abs(dot(uv - p1, n)));
+			}
+
+			return 0.9 - smoothstep(0.0, 0.01, d - r);
+		}
+	
+		vec2 fishey(vec2 uv, vec2 center, float ratio, float dist){
+			  vec2 puv = uv +vec2(1.1);
+			 //center coords
+			  vec2 m = vec2(center.x, center.y/ratio) + vec2(1.0);
+			  //vector from center to current fragment
+			  vec2 d = puv - m;
+			  // distance of pixel from center
+			  float r = sqrt(dot(d, d)); 
+			  //amount of effect
+			  float power = ( TWO_PI / (0.5 * floor(dot(m, m)))) * mix(0.1, 9.94, pow(dist, 19.975));
+			  //radius of 1:1 effect
+			  float bind;
+			  if (power > 0.0) bind = sqrt(dot(m, m));//stick to corners
+			  //else {if (ratio < 1.0) bind = m.x; else bind = m.y;}//stick to borders
+
+			  //Weird formulas
+			  vec2 nuv;
+			  if (power > 0.0)//fisheye
+				nuv = m + normalize(d) * tan(r * power) * bind / tan( bind * power);
+			  else if (power < 0.0)//antifisheye
+			   nuv = m + normalize(d) * atan(r * -power * 10.0) * bind / atan(-power * bind * 10.0);
+			  else 
+				nuv = puv;//no effect for power = 1.0
+
+			return nuv - vec2(1.0);
+		}
+	
+		vec2 kaleidoscope(vec2 uv, vec2 center, float sector, float gamma){
+			vec2 uvToCenter = center - uv;
+			float radius = length(uvToCenter);
+			float theta = atan(uvToCenter.x, uvToCenter.y);
+			float PHI = (TWO_PI * 0.15) / sector;
+			theta = mod(theta, PHI);
+			theta = (theta > PHI * 0.5) ? PHI - theta : theta;
+			theta -= gamma;
+			
+			vec2 nuv = vec2(cos(theta), tan(theta)) * radius;
+			nuv += center;
+			return nuv;
+		}
+	
+		vec4 addGrain(vec2 uv, float time, float grainIntensity){
+    		float grain = random(fract(uv * time)) * grainIntensity;
+    		return vec4(vec3(grain), 1.0);
+		}
+		
+		void main(){
+			vec2 ouv = gl_FragCoord.xy / resolution.xy;
+			vec2 uv = ouv;
+			float n0 = noise(vec3(time * 0.01));
+			float n1 = noise(vec2(time * 0.0025));
+			float n2 = noise(vec2(time * 0.0015));
+			float n3 = noise(vec3(uv + time * 0.01, time * 0.01));
+			
+				
+			float ratio = resolution.x / resolution.y;
+			
+			vec2 center = vec2(0.5);
+			vec2 centerToUV = (uv - center) / vec2(1.0, ratio);
+			float centerDist = length(centerToUV);
+			
+			vec2 nmouse = vec2(mouse.x, mouse.y) / resolution.xy;
+			nmouse.y = 0.3 - nmouse.y;
+			float maxDist = 0.15;
+			float blurEdge = maxDist * 0.6;
+			float blurEdge2 = maxDist * 4.0;
+			vec2 mouseToUV = (uv - nmouse) / vec2(1.0, ratio);
+			float mouseDistance = 1.0001 - smoothstep(maxDist - blurEdge, maxDist, length(centerDist));
+			float mouseDistance2 = 1.0001 - smoothstep(maxDist - blurEdge2, maxDist, length(centerDist));
+			
+			
+			uv = rotateFrom(uv, vec2(0.5), time * 0.15);
+			uv = fishey(uv, nmouse, ratio,  mouseDistance * .2);
+			uv = kaleidoscope(uv, vec2(0.5), 2.0 + 10.0 * n2, TWO_PI * n1 + n3 * mouseDistance * TWO_PI *0.2);
+			//animate y
+			//wave
+			uv.y /= ratio;
+			vec2 basedUV = uv + vec2(1.0);
+			float complexityX = 5.0 * n0 + 10.0;
+			float complexityY = 5.0 * n0 + 10.0;
+			float maxAmp = mix(0.05, 0.75, mouseDistance);
+			float amp = 0.1 * mouseDistance + noise(vec3(basedUV.x * complexityX, basedUV.y * complexityY, time * 0.1)) * maxAmp;
+			float theta = time + mouseDistance + basedUV.y * (TWO_PI);
+			uv.x = fract(uv.x + sin(theta) * amp);
+			//divide into cols rows
+			vec2 nuv = uv * colsrows;
+			vec2 fuv = fract(nuv);
+			vec2 iuv = floor(nuv);
+			 
+			
+			float minSpeed = 1.0;
+			float maxSpeed = 5.0;
+			float speed = minSpeed + random(ceil(uv.x * colsrows.x)) * (maxSpeed - minSpeed);
+			fuv.y = fract(fuv.y + time * speed + maxSpeed);
+			
+			//draw dash line
+			float minWeight = 0.03 + random(vec2(iuv.x, 0.0)) * 0.06;
+			float strokeWeight = mix(minWeight, minWeight * 3.0, mouseDistance);
+			float dlineWidth = mix(0.25 - strokeWeight, 1.0, mouseDistance);//0.5 - strokeWeight;
+			float dline = drawLine(fuv, vec2(0.5, 0.5 - dlineWidth * 0.5), vec2(0.5, 0.5 + dlineWidth * 0.5), strokeWeight);
+			
+			float randIndexHue = random(vec2(iuv.x + floor(time), 0.0));
+			float noiseHue = noise(vec3(randIndexHue, randIndexHue, time));
+			float hue = mix(0.111, 0.128, randIndexHue + (noiseHue * 0.5));
+			//COLORS
+			vec4 grain = addGrain(ouv, time, 0.20);
+			vec3 color = HSLToRGB(vec3(hue, 5.0, 0.20));
+			vec3 bgColor = HSLToRGB(vec3(0.50742, mix(.3, 1.0, mouseDistance), mix(0.28, 0.25, mouseDistance)));
+			float val = dline * (mouseDistance * 0.05 + 1.05);
+			
+			vec3 albedo = mix(bgColor, color, val);
+			
+			gl_FragColor = vec4(albedo, 1.0) + grain;
+		}
+</script>
+
+<script src='88_three.min.js'></script>
+<script  src="script.js"></script>
+
+</body>
+
+<!-- Mirrored from digitonaut.com/art/pixies_planet/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:50:26 GMT -->
+</html>

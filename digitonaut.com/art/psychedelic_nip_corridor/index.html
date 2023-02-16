@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/psychedelic_nip_corridor/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset='utf-8'\>
+<meta name='apple-mobile-web-app-capable' content='yes'><meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'><title>Psychedelic Nip Corridor</title>
+
+<link type="text/css" rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<script id="vs" type="not-js">
+void main()	{
+  gl_Position = vec4( position, 1.0 );
+}
+</script>
+<script id="fs" type="not-js">
+precision mediump float;
+
+// -------------------------------------------- code from https://glslsandbox.com/ ------------------
+/*
+ * Original shader from: https://www.shadertoy.com/view/7tBGRm
+ */
+
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+// glslsandbox uniforms
+uniform float time;
+uniform vec2 resolution;
+
+// shadertoy emulation
+#define iTime time
+#define iResolution resolution
+const vec4 iMouse = vec4(0.);
+
+// --------[ Original ShaderToy begins here ]---------- //
+//Most foundational code built from the Art of Code tutorials https://www.youtube.com/channel/UCcAlTqd9zID6aNX3TzwxJXg
+#define MAX_STEPS 100
+#define MAX_DIST 100.
+#define SURF_DIST .01
+
+vec2 hash22(vec2 p)
+{
+	vec3 p3 = fract(vec3(p.xyx) * vec3(.1031, .1030, .0973));
+    p3 += dot(p3, p3.yzx+33.33);
+    return fract((p3.xx+p3.yz)*p3.zy);
+
+}
+
+vec3 hash33(vec3 p) { 
+    float n = sin(dot(p, vec3(7, 157, 113)));    
+    return fract(vec3(2097152, 262144, 32768)*n); 
+}
+
+
+float smin(float a,float b, float smoothing){
+    float slope=clamp(.5+.5*(b-a)/smoothing,0.,1.);
+    //float ease=slope*(1.-slope); //good boolean intersect
+    //return slope*a+(1.-slope)*b-ease*.5;
+    return mix(b,a,slope) - smoothing*slope*(1.-slope);
+}
+
+mat2 rot(float a){
+    float s=sin(a);float c=cos(a);
+    return mat2(c,-s,s,c);
+}
+
+vec3 getRayDir(vec2 uv, vec3 p, vec3 l, float z){
+//l.x+=6.*sin(p.z*14.2);
+    //z=sin(p.y)*4.; warpy
+    vec3 f = normalize(l-p),
+r=normalize(cross(vec3(0,1,0),f)),
+u=cross(f,r),
+c=f*z,
+i=c+uv.x*r + uv.y*u,
+d=normalize(i);
+return d;
+}
+
+
+float sdPill(vec3 p,vec3 a, vec3 b, float r){
+    //float v=floor(sin(p.x*4.)*2.)*(1.+cos(iTime));//floor(sin(p.x*2.)*4.)*2;
+    vec3 offset=vec3(0,0,0);//+vec3(round(1.*abs(cos(iTime+p.x*2.))),0,0);
+    a+=offset;
+    b+=offset;
+    vec3 ab=b-a;
+    vec3 ap=p-a;
+    float t = dot(ab,ap) /dot(ab,ab); //length(ab) works too but doestn connect
+    t=clamp(t,0.,1.);
+    vec3 c = a+ t*ab;
+    return length(p-c) -r;
+}
+
+float sdTube(vec3 p,float r){
+    //p.x-=cos(p.z*.2)*3.;
+    //p.y+=sin(iTime*.8)*3.;
+    vec3 a=vec3(0,0,90.);
+    vec3 b = vec3(0,0,-90); //make this -900 for a cool effect
+    vec3 ab=b-a;
+    vec3 ap=p-a;
+    float t = dot(ab,ap) /dot(ab,ab); //length(ab) works too but doestn connect
+    t=clamp(t,0.,1.);
+    vec3 c = a+ t*ab;
+    float moving=p.z*.2+iTime*10.;
+    float zWave=atan(p.y,(p.x));
+    float m=6.;//floor(abs(sin(moving*.1))*6.);
+    float scale=sin(zWave*m);//(sin(moving));
+    r-=2.*scale*(cos(t*p.z*.6 +iTime*10.));
+    return length(p-c) -r;
+}
+
+float sdSphere(vec3 p,vec3 a, float r){
+return length(p-a) - r;
+}
+
+float sdTorus(vec3 p,vec2 r){
+    float i=length(p.xy)-r.x;
+    return length(vec2(i,p.z)) - r.y;
+}
+
+float sdBox(vec3 p, vec3 s){
+    p=abs(p)-s;
+    return length(max(p,0.))+min(max(p.x, max(p.y, p.z)),0.);
+}
+
+float getDist(vec3 p){
+    
+    vec3 a=vec3(0.,1.,.4);//vec3(cos((p.y+iTime)*20.)/8.,sin(p.y*3.+iTime*3.)*2.+1.,6); //vec3(0,1,4);//
+    vec3 b=vec3(0,-2.*sin(iTime),8);
+    //float sphereD=sdPill(p,a,b,1.);
+    //vec3 t=vec3(cos(p.x*1.),p.y+(sin(iTime-cos(p.x))*2.),cos(p.z));
+    //float torusD=sdTorus(b,vec2(1.5,.5));
+    float planeDist=p.y+10.;
+    //float sp1=sdSphere(p,a,1.);
+    
+    float tube=sdTube(p,20.);
+    float tubei=sdTube(p,7.5);
+    tube=max(tube,-tubei);
+    //float box=sdBox(p+vec3(0,-1,2),vec3(1,1,1));
+    //float d=min(tube,planeDist);
+    float d=tube;
+   // float d=min(torusD,planeDist);
+    return d;
+}
+
+float rayMarch(vec3 ro, vec3 rd){
+    float dO=0.;
+    for(int i=0;i<MAX_STEPS;i++){
+        vec3 p = ro +rd*dO;
+        float dS =getDist(p);
+        dO+=dS;
+        if(dO>MAX_DIST || dS<SURF_DIST)break;
+    }
+    return dO;
+}
+
+vec3 getNormal(vec3 p){
+    float dist=getDist(p);
+    vec2 e=vec2(0.01,0);
+    vec3 n = dist - vec3(getDist(p-e.xyy),getDist(p-e.yxy),getDist(p-e.yyx));
+    n=normalize(n);
+    /*n*=pow(n,vec3(10.));
+    n=normalize(n);*/
+    /*
+    vec3 o=n*10.;
+    vec3 guv=abs(fract(o)-.5);
+    
+    guv.x+=cos(iTime*2.)-sin(iTime*2.);
+    guv.z-=cos(iTime*2.)+sin(iTime*2.);
+    
+    vec3 id=floor(o);
+    float sp=sdSphere(p,guv,.1)/2.;
+    n+=vec3(sp);//dot(sp,sp);
+    n=normalize(n);*/
+    //n+=dot(guv,guv);
+    
+    return n;
+}
+
+vec3 getLight(vec3 p,vec2 uv){
+    vec3 lightPos=vec3(cos(iTime)*3.,5,0); // 0 5 6 
+    vec3 l =normalize(lightPos-p);
+    vec3 n = getNormal(p);
+    n=abs(n);
+    p.z-=2.;//iTime;
+    //p.z+=iTime*10.;
+   
+   /*
+    n*=pow(n,vec3(10.));
+    //n/=n.x+n.y+n.z;
+    n=normalize(n);
+    vec3 c=texture(iChannel1,p.xy*.5 +.5).rgb*n.z 
+    +texture(iChannel1,p.xz*.5 +.5).rgb*n.y
+    +texture(iChannel1,p.yz*.5 +.5).rgb*n.x;*/
+    
+    vec2 i =vec2(floor(p.z*.01),floor(length(p.xy)*1.4));
+    
+    vec2 v=hash22(i);
+    vec3 t=p;
+    float val=length(v);
+    //vec3 c=vec3(length(v));//-vec3(length(t));
+    vec3 c=vec3(val*.6+.8,val*1.,1.-val);
+    //vec3 c=abs(fract(p*.4)-0.);
+    
+    //float id=floor((c.z+.2)*2.)*.2;
+    //c=vec3((c.z-(id)));
+    
+    float c1=.3+floor(c.z*3.)*.3;
+    
+    //c=n;
+    //c=vec3(c1);
+    
+    
+    //c.xy-=v;
+    //c.z*=.5;
+    //c=normalize(c);
+    ///c.g=length(c);
+    
+    //c.b+=c1;
+    //c=normalize(c);
+    
+    /*float near=0.;
+    for(float i=-1.;i<-2.;i++){
+    for(float i=-1.;i<-2.;i++){
+    
+    }
+    }*/
+    
+    //c=(c*.34567);
+    //c=getNormal(n);
+    //c=n;
+    float diff=clamp(dot(l,c),0.,1.);
+    //c=vec3(diff);
+    float dist=rayMarch(p+n*SURF_DIST*2.,l);
+    //diff=smoothstep(0.,texture(iChannel1,p.xy).r,diff);
+    if(dist<length(lightPos -p)) diff*=0.6;
+    return c;
+
+}
+
+/*
+float checkers( in vec3 p )
+{
+    vec2 s = sign(fract(p*.5)-.5);
+    return .5 - .5*s.x*s.y;
+}
+*/
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord ){
+    // Normalized pixel coordinates (from 0 to 1)
+    vec2 uv = (fragCoord-0.5*iResolution.xy)/iResolution.y;
+    vec2 m=iMouse.xy/iResolution.xy;
+    
+    //camera 1
+   // vec3 ro=vec3(sin(iTime*.2)*2.,0.,cos(iTime*.2));//cos(iTime),5,sin(iTime)+iTime*1.);
+    vec3 ro=vec3(sin(iTime*1.2)*2.,cos(iTime*.5)*.8,5.);//cos(iTime),5,sin(iTime)+iTime*1.);
+    //ro.x-=2.+sin(3.14*rd.z*.06)*10.;
+    
+    //ro.yz*= rot(-m.y*3.14+1.);
+    //ro.xz*= rot(-m.x*6.28);
+       //ray diff
+    vec3 rd=getRayDir(uv,ro,vec3(0),1.);//normalize(vec3(uv.x,uv.y,1));
+    //rd.x-=2.+sin(3.14*rd.z*.06)*10.;
+    float dist=rayMarch(ro,rd);
+    
+    
+    vec3 point = ro +rd*dist;
+    vec3 diffuse=getLight(point,uv);
+
+    // Time varying pixel color
+    vec3 col = diffuse;//getNormal(point);//.99,.6,4.);//0.5 + 0.5*cos(iTime+uv.xyx+vec3(0,2,4));
+    
+        //col=vec3(diffuse);
+    //col=mix(col,vec3(1),vec3(diffuse));
+      // col.rg=texture(iChannel1,uv).rg;
+
+    // Output to screen
+    fragColor = vec4(col,1.0);
+}
+// --------[ Original ShaderToy ends here ]---------- //
+
+void main(void)
+{
+    mainImage(gl_FragColor, gl_FragCoord.xy);
+}
+
+// -------------------------------------------------------------------------------------------------------------------
+
+</script>
+<script src="three.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+
+<!-- Mirrored from digitonaut.com/art/psychedelic_nip_corridor/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:10 GMT -->
+</html>

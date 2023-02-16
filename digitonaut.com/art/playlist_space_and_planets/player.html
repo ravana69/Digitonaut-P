@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_space_and_planets/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>Space and Planets Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"sea_of_fog","name":"Sea Of Fog","contemplative":true,"interactive":false,"listed":true,"version":1648822986834,"rating":3,"author":"Jaszunio 15","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/tsdSzn"},{"id":"yellow_starfield","name":"Yellow Starfield","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648821277669,"rating":4,"author":"Iridule"},{"id":"the_ring","name":"The Ring","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648814149218,"rating":4,"author":"Avin","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/WtG3RD"},{"id":"spacial_sky","name":"Spacial Sky","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798329324,"rating":4},{"id":"space-to-surface_flight","name":"Space-to-surface Flight","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798239945,"rating":4,"author":"Reinder","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/4tjGRh"},{"id":"solar","name":"Solar","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797719581,"rating":5,"author":"Scott Weaver","year":"2020","info_url":"https:\/\/codepen.io\/sweaver2112\/pen\/RwNmvwN"},{"id":"pyroclastic_fireball","name":"Pyroclastic Fireball","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783463565,"rating":5,"author":"Duke","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/MtXSzS"},{"id":"planet_eclipse","name":"Planet Eclipse","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779512442,"rating":5},{"id":"peachy_goo","name":"Peachy Goo","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648766667837,"rating":3,"author":"Pixel Fiddler","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/ttSXRG"},{"id":"nebulous_atmosphere","name":"Nebulous Atmosphere","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745567844,"rating":4},{"id":"magmatic_lava","name":"Magmatic Lava","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733929032,"rating":5,"author":"Alien 5ive"},{"id":"lunar_debris","name":"Lunar Debris","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733614253,"rating":3,"author":"Shane","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/lsySWw"},{"id":"hot_shower","name":"Hot Shower","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648670298932,"rating":4,"author":"Kali","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/4lf3Rj"},{"id":"awesome_star","name":"Awesome Star","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648517435131,"rating":4,"author":"Foxes","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/4lfSzS"},{"id":"warp_speed","name":"Warp Speed","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818465179,"rating":3,"author":"Dave Hoskins","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/4tjSDt"},{"id":"supernova_reborn","name":"Supernova Reborn","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813300898,"rating":4,"author":"KylBlz","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/XdVXWc"},{"id":"supernova_pulse","name":"Supernova Pulse","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813296521,"rating":4,"author":"Guil","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/XtXGWM"},{"id":"sun_surface","name":"Sun Surface","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813061584,"rating":5,"author":"Duke","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/XlSSzK"},{"id":"sparks_drifting","name":"Sparks Drifting","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798334504,"rating":4,"author":"Sjeiti","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/MlKSWm"},{"id":"space_blob","name":"Space Blob","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797778683,"rating":4,"author":"Isladjan","year":"2020","info_url":"https:\/\/codepen.io\/isladjan\/pen\/bGpjZwN"},{"id":"shader_moon","name":"Shader Moon","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648786415377,"rating":3,"author":"Victor Vergara","year":"2018","info_url":"https:\/\/codepen.io\/vcomics\/pen\/ZjMpOe"},{"id":"re-entry","name":"Re-entry","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648784110603,"rating":3,"author":"Nimitz","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/4dGyRh"},{"id":"ray_planet","name":"Ray Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648784081026,"rating":3,"author":"Hughsk","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/4t2Gzz"},{"id":"rainbow_turbulence","name":"Rainbow Turbulence","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648784013995,"rating":3,"author":"Julapy","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/3sSXRz"},{"id":"procedural_lava","name":"Procedural Lava","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780407506,"rating":5,"author":"Nimitz","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/lslXRS"},{"id":"pocgen_planet","name":"Pocgen Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779883022,"rating":4,"author":"Kchnkrml","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/tltXWM"},{"id":"planet_layers","name":"Planet Layers","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779521065,"rating":4,"author":"Andre Mattos","year":"2018","info_url":"https:\/\/codepen.io\/ma77os\/pen\/NOOqmd"},{"id":"nebula_space","name":"Nebula Space","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745443698,"rating":4,"author":"Pazimor","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/4d3SWM"},{"id":"museum_of_random_planets","name":"Museum Of Random Planets","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745186309,"rating":4,"author":"Luke Rissacher","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/XttGzj"},{"id":"lensing_in_space","name":"Lensing In Space","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648722957473,"rating":3,"author":"Ebanflo","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/MtByRh"},{"id":"hyperspace","name":"Hyperspace","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648670326415,"rating":5,"author":"Noah Blon","year":"2013","info_url":"https:\/\/codepen.io\/noahblon\/pen\/GKflw"},{"id":"green_edges","name":"Green Edges","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648663445977,"rating":4,"author":"Ivan Bogachev","year":"2020","info_url":"https:\/\/codepen.io\/sfi0zy\/pen\/QWbrjyp"},{"id":"globe","name":"Globe","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648655215325,"rating":4},{"id":"galaxy_of_universes","name":"Galaxy Of Universes","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648652344662,"rating":4,"author":"Dave Hoskins","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/MdXSzS"},{"id":"fractal_planet","name":"Fractal Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646698824,"rating":3,"author":"Peter Liepa","year":"2019"},{"id":"flame_eye","name":"Flame Eye","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648629565346,"rating":4,"author":"Arxyz","year":"2018"},{"id":"fizz","name":"Fizz","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648629560049,"rating":3,"author":"Liam Egan","year":"2019"},{"id":"far_on_a_planet","name":"Far on a Planet","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628598221,"rating":5,"author":"Dave Hoskins","year":"2015"},{"id":"experimental_starfield","name":"Experimental Starfield","preview":"preview.png","contemplative":true,"interactive":true,"offline":false,"listed":true,"version":1648628285199,"rating":3,"author":"Kevin Levron","year":"2019"},{"id":"dawn","name":"Dawn","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648602270650,"rating":4,"author":"XORXOR","year":"2016"},{"id":"dangerous_planet","name":"Dangerous Planet","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648601995010,"rating":3,"author":"Alexand Rejosephdev","year":"2022"},{"id":"blue_galaxies","name":"Blue Galaxies","preview":"preview.png","contemplative":true,"interactive":true,"offline":true,"listed":true,"version":1648534374525,"rating":3,"author":"Luca Zampetti","year":"2017","tags":"spiral"},{"id":"cosmic_travel","name":"Cosmic Travel","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648592450026,"rating":4,"author":"Huwb","year":"2014"},{"id":"centre_of_gravity","name":"Centre Of Gravity","preview":"preview.png","contemplative":true,"interactive":true,"offline":false,"listed":true,"version":1648568326013,"rating":3,"tags":"gravity"},{"id":"captain_harlocks_maiden_voyage","name":"Captain Harlocks Maiden Voyage","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648567064113,"rating":5,"author":"Evvvvil","year":"2021"},{"id":"andromeda_jewel","name":"Andromeda Jewel","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648468214042,"rating":4,"author":"Wyatt","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/4sVfWR"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_space_and_planets/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>

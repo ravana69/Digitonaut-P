@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_retro_pixels/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>Retro Pixels Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"vintage_labyrinth","name":"Vintage Labyrinth","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818173921,"rating":3},{"id":"voxel_planet","name":"Voxel Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818333538,"rating":2,"author":"Mhnewman","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/4tlfDn"},{"id":"voxel_tunnel","name":"Voxel Tunnel","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818425046,"rating":3,"author":"lsdlive","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/MscBRs"},{"id":"somewhere_in_1993","name":"Somewhere In 1993","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797751602,"rating":4,"author":"Nimitz","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/Md2XDD"},{"id":"ray_bert","name":"Ray Bert","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648784071327,"rating":4,"author":"Dave Hoskins","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/4sl3RH"},{"id":"pixellated_plasma","name":"Pixellated Plasma","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648767273971,"rating":3,"author":"104","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/4tjGWy"},{"id":"mario_vintage","name":"Mario Vintage","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648734627628,"rating":5,"author":"Knarkowicz","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/XtlSD7"},{"id":"atari-mega-scroll","name":"Atari-mega-scroll","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648479342794,"rating":3,"author":"Gigatron","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/lttXRf"},{"id":"explorers","name":"Explorers","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628340330,"rating":3,"author":"Dillon","year":"2020"},{"id":"embroidery","name":"Embroidery","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648627499052,"rating":4,"author":"Dillon","year":"2020"},{"id":"game_of_life","name":"Game of Life","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648652352553,"rating":3,"author":"Mustafa Enes","year":"2017","info_url":"https:\/\/codepen.io\/pavlovsk\/pen\/prgLVo"},{"id":"minecraft","name":"Minecraft","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648742848500,"rating":3},{"id":"pixel_grid","name":"Pixel Grid","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648767268999,"rating":3,"author":"Rachel Smith","year":"2016","info_url":"https:\/\/codepen.io\/rachsmith\/pen\/VjpYNV"},{"id":"rock_paper_scissors","name":"Rock Paper Scissors","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648786007483,"rating":3,"author":"Nathan Asdarjian","year":"2021","info_url":"https:\/\/codepen.io\/nhasdarjian\/pen\/JjJbMvd"},{"id":"its_raining_colors","name":"It's raining colors","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693048126,"rating":4,"author":"Dillon","year":"2020","info_url":"https:\/\/codepen.io\/Dillo\/pen\/vYOxvPe"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_retro_pixels/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>

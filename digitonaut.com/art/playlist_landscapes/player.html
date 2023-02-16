@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_landscapes/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>Landscapes Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"wet_beach_sand","name":"Wet Beach Sand","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648820022244,"rating":2,"author":"Jarble","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/ssGGWw"},{"id":"volcanic_planet","name":"Volcanic Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818283531,"rating":3,"author":"Jarble","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/7dV3zt"},{"id":"top_view_mediterranean","name":"Top View Mediterranean","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648814605139,"rating":5,"author":"Ocb","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/MtGfWK"},{"id":"snow_mountain","name":"Snow Mountain","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797670295,"rating":4,"author":"Unix","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/lsKGW3"},{"id":"red_landscape","name":"Red Landscape","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648785511700,"rating":4,"author":"Edubart","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/NsS3Dt"},{"id":"polar_night_with_aurora","name":"Polar Night With Aurora","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779899892,"rating":5,"author":"Supervitas","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/3ss3R4"},{"id":"planet_zebra","name":"Planet Zebra","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779804444,"rating":4,"author":"Plento","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/tdSBWc"},{"id":"over_the_moon","name":"Over The Moon","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648753017642,"rating":3},{"id":"noctural_lava","name":"Noctural Lava","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648746553012,"rating":3},{"id":"night_escape","name":"Night Escape","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648746307957,"rating":4,"author":"Fbm","year":"2022","info_url":"https:\/\/www.shadertoy.com\/view\/NtGXDG"},{"id":"mountains_and_vegetation","name":"Mountains And Vegetation","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648743680152,"rating":3,"author":"Yonatan","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/3t2cR1"},{"id":"mountains_and_lakes","name":"Mountains And Lakes","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648743511375,"rating":4,"author":"David Hoskins","year":"2013"},{"id":"mars_jetpack","name":"Mars Jetpack","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648735062626,"rating":3,"author":"Dave Hoskins","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/Md23Wz"},{"id":"magmatic_lava","name":"Magmatic Lava","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733929032,"rating":5,"author":"Alien 5ive"},{"id":"julialand","name":"Julialand","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693397740,"rating":4,"author":"Lucas Assone","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/wlKGDt"},{"id":"interactive_landscape","name":"Interactive Landscape","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648692045735,"rating":4},{"id":"high_mountain","name":"High Mountain","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648666347704,"rating":3},{"id":"frozen_wasteland","name":"Frozen Wasteland","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648652275663,"rating":4,"author":"Dave Hoskins","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/Xls3D2"},{"id":"fog_mountain","name":"Fog Mountain","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648644370652,"rating":4,"author":"ESpitz","year":"2013"},{"id":"flight_over_isles","name":"Flight Over Isles","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648642171463,"rating":3},{"id":"flight_over_a_terrain","name":"Flight Over A Terrain","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648641838621,"rating":4,"author":"Yumcyawiz","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/MsSBWV"},{"id":"elevated_coast","name":"Elevated Coast","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648627924129,"rating":4,"author":"Guil","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/4l23Rh"},{"id":"desert","name":"Desert","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609103038,"rating":5,"author":"Wachel","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/ltcGDl"},{"id":"day_night_ocean","name":"Day Night Ocean","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648602452679,"rating":5},{"id":"calm_ocean","name":"Calm Ocean","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648566862642,"rating":4,"author":"Alexander Alekseev"},{"id":"antigravity_magma","name":"Antigravity Magma","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648469000515,"rating":3},{"id":"mountains","name":"Mountains","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648743358285,"rating":4,"author":"Dave Hoskins","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/4slGD4"},{"id":"alps_in_winter","name":"Alps In Winter","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648466371501,"rating":3,"author":"Dave Hoskins","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/4ssXW2"},{"id":"terra_cognita","name":"Terra Cognita","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813547332,"rating":4,"author":"Mike Linkovich","year":"2017","info_url":"https:\/\/spacejack.github.io\/"},{"id":"sunrise_sunset","name":"Sunrise Sunset","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813087655,"rating":5,"author":"Kig","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/XsBXDc"},{"id":"solar_quartet","name":"Solar Quartet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797730270,"rating":5,"author":"Yonatan","year":"2018","info_url":"https:\/\/codepen.io\/y0natan\/pen\/MVvxBM"},{"id":"shader_lab_crater_terrain","name":"Shader Lab Crater Terrain","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648786365245,"rating":5,"author":"Kevin Roast","year":"2015","info_url":"http:\/\/www.kevs3d.co.uk\/dev\/shaders\/"},{"id":"parallax_mountain_range","name":"Parallax Mountain Range","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765856414,"rating":3,"author":"Felix Bade ","year":"2017","info_url":"https:\/\/openprocessing.org\/sketch\/438432"},{"id":"krypton_sunrise","name":"Krypton Sunrise","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648696391201,"rating":4,"author":"Trisomie 21","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/Mll3WM"},{"id":"mystery_mountains","name":"Mystery Mountains","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745411968,"rating":2,"author":"Dave Hoskins","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/llsGW7"},{"id":"fractal_trees","name":"Fractal Trees","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646725362,"rating":5,"author":"Macbooktall","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/llXfRr"},{"id":"far_on_a_planet","name":"Far on a Planet","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628598221,"rating":5,"author":"Dave Hoskins","year":"2015"},{"id":"escalated_raymarching_terrain","name":"Escalated Raymarching Terrain","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648627915763,"rating":5,"author":"Drift","year":"2016"},{"id":"dry_rocky_george","name":"Dry Rocky George","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648627085850,"rating":4,"author":"Shane","year":"2017"},{"id":"doski_canady","name":"Doski Canady","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648610565757,"rating":4,"author":"W23","year":"2014"},{"id":"desert_sand","name":"Desert Sand","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609182924,"rating":5,"author":"Shane","year":"2018"},{"id":"desert_morning","name":"Desert Morning","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609167057,"rating":4,"author":"ESpitz","year":"2013"},{"id":"desert_chase","name":"Desert Chase","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609149620,"rating":5,"author":"Ndxbxrme","year":"2013"},{"id":"desert_canyon","name":"Desert Canyon","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609131571,"rating":5,"author":"Shane","year":"2016"},{"id":"dawn","name":"Dawn","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648602270650,"rating":4,"author":"XORXOR","year":"2016"},{"id":"cloudy_sunset","name":"Cloudy Sunset","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648577275831,"rating":4,"author":"Miloszmaki","year":"2015"},{"id":"canyon_pass","name":"Canyon Pass","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648567050931,"rating":4,"author":"Shane","year":"2017"},{"id":"layerscape","name":"Layerscape","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648696632808,"rating":5,"author":"Andr\u00e9 Mattos","year":"2018","info_url":"https:\/\/codepen.io\/ma77os\/pen\/mzoZBz"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_landscapes/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>

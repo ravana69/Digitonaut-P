@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_sun_and_lights/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>Sun and Lights Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"waving_grid_tunnel","name":"Waving Grid Tunnel","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648819081422,"rating":4,"author":"Takumi Fukasawa","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/tlfGRN"},{"id":"to_the_light","name":"To The Light","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648814479812,"rating":4,"author":"Blue Max","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/wtd3zM"},{"id":"the_ring","name":"The Ring","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648814149218,"rating":4,"author":"Avin","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/WtG3RD"},{"id":"ocean_sky","name":"Ocean Sky","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648746787652,"rating":3},{"id":"multicolor_lightning","name":"Multicolor Lightning","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745101369,"rating":5,"author":"Brandon Fogerty"},{"id":"luminous_lines","name":"Luminous Lines","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733531998,"rating":3},{"id":"lowpoly_deepspace","name":"Lowpoly Deepspace","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733044019,"rating":5},{"id":"light_rays","name":"Light Rays","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648723156202,"rating":3,"author":"ElusivePete","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/lljGDt"},{"id":"led_tower","name":"Led Tower","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648722993321,"rating":3,"author":"Evvvvil","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/3sGSR3"},{"id":"hot_fire","name":"Hot Fire","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648670097227,"rating":5},{"id":"flaming_mandelbulb","name":"Flaming Mandelbulb","contemplative":true,"interactive":false,"listed":true,"version":1648831897604,"rating":3,"author":"Seven DC","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/ssGGWc"},{"id":"fire_away","name":"Fire Away","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628882218,"rating":3},{"id":"digital_ambience","name":"Digital Ambience","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609792677,"rating":4,"author":"Srtuss","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/MdXXW2"},{"id":"day_night_ocean","name":"Day Night Ocean","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648602452679,"rating":5},{"id":"dancing_colors","name":"Dancing Colors","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648593757436,"rating":3,"author":"Thygate"},{"id":"anglesine","name":"Anglesine","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648468299976,"rating":4,"author":"Imsure1200q 1UWE130","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/MtdGzH"},{"id":"underwater_sun","name":"Underwater Sun","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648817374516,"rating":3,"author":"Liam Egan","year":"2018","info_url":"https:\/\/codepen.io\/shubniggurath\/pen\/XZJozp"},{"id":"the_carrot_dimension","name":"The Carrot Dimension","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813745946,"rating":5,"author":"Liam Egan","year":"2018","tags":"Phosphorescence","info_url":"https:\/\/codepen.io\/shubniggurath\/pen\/ZmErQQ"},{"id":"sunset_then_sunrise","name":"Sunset Then Sunrise","contemplative":true,"interactive":false,"listed":true,"version":1648831268610,"rating":4,"author":"Robobo 1221","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/Ml2cWG"},{"id":"sunrise_sunset","name":"Sunrise Sunset","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813087655,"rating":5,"author":"Kig","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/XsBXDc"},{"id":"sun_surface","name":"Sun Surface","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813061584,"rating":5,"author":"Duke","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/XlSSzK"},{"id":"stars_field","name":"Stars Field","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798902187,"rating":3,"author":"Fabrice Neyret","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/4scXWB"},{"id":"speed_on_ocean_sunrise","name":"Speed On Ocean Sunrise","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798474155,"rating":5,"author":"Pheema","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/lsXcz8"},{"id":"sparks_drifting","name":"Sparks Drifting","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798334504,"rating":4,"author":"Sjeiti","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/MlKSWm"},{"id":"solar","name":"Solar","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797719581,"rating":5,"author":"Scott Weaver","year":"2020","info_url":"https:\/\/codepen.io\/sweaver2112\/pen\/RwNmvwN"},{"id":"rugile_star","name":"Rugile Star","contemplative":true,"interactive":true,"listed":true,"version":1648822610756,"rating":3,"author":"Jack Rugile","year":"2015","info_url":"https:\/\/codepen.io\/jackrugile\/pen\/WQBPzv"},{"id":"pyroclastic_fireball","name":"Pyroclastic Fireball","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783463565,"rating":5,"author":"Duke","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/MtXSzS"},{"id":"procedural_lava","name":"Procedural Lava","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780407506,"rating":5,"author":"Nimitz","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/lslXRS"},{"id":"power_coils","name":"Power Coils","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780326437,"rating":4,"author":"Fizzer","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/4ljGWt"},{"id":"polygon_lens_flare","name":"Polygon Lens Flare","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779912554,"rating":4,"author":"Yusef 28","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/Xlc3D2"},{"id":"plasmatic_isosurface","name":"Plasmatic Isosurface","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779833452,"rating":4,"author":"Annaliza Torres","year":"2016","info_url":"https:\/\/codepen.io\/aptorres27\/pen\/pyxPMq"},{"id":"particules_effect","name":"Particules Effect","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765949608,"rating":4,"author":"Michael Phipps","year":"2018","info_url":"https:\/\/codepen.io\/michaelphipps\/pen\/JeqZLW"},{"id":"neon_balls","name":"Neon Balls","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745572798,"rating":3,"author":"Phi16","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/MsyGRm"},{"id":"my_universe","name":"My Universe","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745391364,"rating":3,"author":"Kakaxi 0618","year":"2018","info_url":"https:\/\/codepen.io\/kakaxi0618\/pen\/JmLpYj"},{"id":"motion_of_a_molecule","name":"Motion Of A Molecule","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648743344842,"rating":3,"author":"Alex Permyakov","year":"2015","info_url":"https:\/\/codepen.io\/alexdevp\/pen\/meyYVQ"},{"id":"mist_ring","name":"Mist Ring","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648743135757,"rating":4,"author":"Foxhuntd","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/llXXR8"},{"id":"liquid_sphere","name":"Liquid Sphere","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648729909614,"rating":3},{"id":"lights_in_smoke","name":"Lights In Smoke","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648729632556,"rating":5,"author":"Ehj1","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/MdyGzR"},{"id":"lighting_blob","name":"Lighting Blob","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648723163107,"rating":3,"author":"Aadebdeb","year":"2017","info_url":"https:\/\/codepen.io\/aadebdeb\/pen\/Npexyo"},{"id":"light_fog_blobs","name":"Light Fog Blobs","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648722985820,"rating":3,"author":"Paulo Falcao","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/lsfGzr"},{"id":"light_emitting_particules","name":"Light Emitting Particules","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648722981320,"rating":5,"author":"Rogier Koppejan","year":"2018","info_url":"https:\/\/codepen.io\/rogierkoppejan\/pen\/eVGKJY"},{"id":"light_circles","name":"Light Circles","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648722977061,"rating":3,"author":"Deefunct","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/MlyGzW"},{"id":"judging_begins","name":"Judging Begins","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693298654,"rating":4,"author":"Nimitz","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/llXGzB"},{"id":"happy_diwali_fireworks","name":"Happy Diwali Fireworks","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648666000858,"rating":3,"author":"Piyushslayer","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/Ws3SRS"},{"id":"glowing_circle","name":"Glowing Circle","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648662884618,"rating":4,"author":"Remonvv","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/4dSfDK"},{"id":"full_fire","name":"Full Fire","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648652334688,"rating":4,"author":"Ren an illusionist","year":"2018","info_url":"https:\/\/codepen.io\/RenWorks\/pen\/oQVeWY"},{"id":"flow_of_cells","name":"Flow Of Cells","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648642195580,"rating":5,"author":"Sben","year":"2015"},{"id":"flame_eye","name":"Flame Eye","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648629565346,"rating":4,"author":"Arxyz","year":"2018"},{"id":"fire_blob","name":"Fire Blob","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628887920,"rating":5,"author":"Matei Copot","year":"2015"},{"id":"falling_light","name":"Falling Light","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628577573,"rating":4,"author":"Toshiya Marukubo","year":"2021"},{"id":"electro","name":"Electro","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648627360661,"rating":3,"author":"Sqrt_1","year":"2016"},{"id":"electric_field","name":"Electric Field","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648627337402,"rating":3,"author":"Yrai","year":"2017"},{"id":"dive_to_cloud","name":"Dive To Cloud","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648610299308,"rating":3,"author":"Lise","year":"2016"},{"id":"diablo_angel_wind","name":"Diablo Angel Wind","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609576600,"rating":4,"author":"Twitchingace","year":"2016"},{"id":"colour_wars","name":"Colour Wars","preview":"preview.png","contemplative":true,"interactive":true,"offline":false,"listed":true,"version":1648591016773,"rating":4,"author":"Tiffany Rayside","year":"2016"},{"id":"colored_eclipse","name":"Colored Eclipse","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648590075071,"rating":4,"author":"Sclavel","year":"2018"},{"id":"cloudy_sunset","name":"Cloudy Sunset","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648577275831,"rating":4,"author":"Miloszmaki","year":"2015"},{"id":"ball_of_fire","name":"Ball Of Fire","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648518077779,"rating":4,"author":"Trisomie 21","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/lsf3RH"},{"id":"bad_land","name":"Bad Land","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648518022934,"rating":4,"author":"Kuvkar","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/ltB3zt"},{"id":"awesome_star","name":"Awesome Star","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648517435131,"rating":4,"author":"Foxes","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/4lfSzS"},{"id":"aurora_borealis","name":"Aurora Borealis","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648507118678,"rating":4},{"id":"almost_explosion","name":"Almost Explosion","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648466302442,"rating":4,"author":"Emil","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/MdGGRW"},{"id":"five_star","name":"Five Star","preview":"preview.png","contemplative":true,"interactive":true,"offline":true,"listed":true,"version":1648629553039,"rating":4,"author":"Tiffany Rayside","year":"2016"},{"id":"lightning_points","name":"Lightning Points","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648723190707,"rating":4,"author":"Akimitsu Hamamuro","year":"2012","info_url":"https:\/\/codepen.io\/akm2\/pen\/LuDba"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_sun_and_lights/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_particules/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>Particules Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"seeding","name":"Seeding","contemplative":true,"interactive":false,"listed":true,"version":1648823194679,"rating":2,"author":"Yuanchuan","year":"2018","info_url":"https:\/\/codepen.io\/yuanchuan\/pen\/ZqbVVL"},{"id":"yellow_starfield","name":"Yellow Starfield","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648821277669,"rating":4,"author":"Iridule"},{"id":"tv_noise","name":"Tv Noise","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648817280665,"rating":5},{"id":"spiral_dots","name":"Spiral Dots","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798631679,"rating":2,"author":"Alex McNerney","year":"2017","info_url":"https:\/\/codepen.io\/ajm13\/pen\/gWPbPr"},{"id":"nebulous_atmosphere","name":"Nebulous Atmosphere","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745567844,"rating":4},{"id":"lightning_storm","name":"Lightning Storm","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648729625402,"rating":3,"author":"Brandon Fogerty"},{"id":"hot_shower","name":"Hot Shower","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648670298932,"rating":4,"author":"Kali","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/4lf3Rj"},{"id":"acid_smoke","name":"Acid Smoke","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648439800451,"rating":4},{"id":"wormhole_dots","name":"Wormhole Dots","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648821137113,"rating":2,"author":"Louis Hoebregts","year":"2017","info_url":"https:\/\/codepen.io\/Mamboleoo\/pen\/brdoeM"},{"id":"world_of_turbulence","name":"World of Turbulence","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648821120079,"rating":3,"author":"Dillon","year":"2019","info_url":"https:\/\/codepen.io\/Dillo\/pen\/eYOegjY"},{"id":"vertex_atmosphere","name":"Vertex Atmosphere","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648817597274,"rating":2,"author":"Langlanglang","year":"2016","info_url":"https:\/\/codepen.io\/sanlang\/pen\/jqvdqY"},{"id":"trippy_hue_boids","name":"Trippy Hue Boids","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648816910823,"rating":3,"author":"Rik Schennink","year":"2018","info_url":"https:\/\/codepen.io\/rikschennink\/pen\/gaQxPY"},{"id":"travellers","name":"Travellers","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648816742770,"rating":3,"author":"Sean Free","year":"2019","info_url":"https:\/\/codepen.io\/seanfree\/pen\/joXYaR"},{"id":"toshiya_particules","name":"Toshiya Particules","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648815522761,"rating":3,"author":"Toshiya Marukubo","year":"2021","info_url":"https:\/\/codepen.io\/toshiya-marukubo\/pen\/MWmLoeW"},{"id":"the_illusion","name":"The Illusion","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648814046892,"rating":3,"author":"Matei Copot","year":"2017","info_url":"https:\/\/codepen.io\/towc\/pen\/qRoZJO"},{"id":"the_hills_have_noise","name":"The hills have noise","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648814042748,"rating":3,"author":"Tiffany Rayside","year":"2015","info_url":"https:\/\/codepen.io\/tmrDevelops\/pen\/PPOqEE"},{"id":"terminal_particules","name":"Terminal Particules","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813541664,"rating":5,"author":"Toshiya Marukubo","year":"2021","info_url":"https:\/\/codepen.io\/toshiya-marukubo\/pen\/RwgWYoq"},{"id":"swirling_dots","name":"Swirling Dots","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813305759,"rating":3,"author":"Darryl Huffman","year":"2018","info_url":"https:\/\/codepen.io\/darrylhuffman\/pen\/YaPGqm"},{"id":"vertex-ocean","name":"Vertex Ocean","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648817606919,"rating":3,"author":"Radik","year":"2019","info_url":"https:\/\/codepen.io\/H2xDev\/pen\/bJNNEX"},{"id":"retro-waves","name":"Retrowaves","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648785774490,"rating":3,"author":"Wenux","year":"2018","info_url":"https:\/\/codepen.io\/wenux\/pen\/VyMvvz"},{"id":"rainbowness","name":"Rainbowness","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648784028365,"rating":2,"author":"Matei Copot","year":"2017","info_url":"https:\/\/codepen.io\/towc\/pen\/EbQKmy"},{"id":"rainbow_rain","name":"Rainbow Rain","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783928526,"rating":4,"author":"Matei Copot","year":"2017","info_url":"https:\/\/codepen.io\/towc\/pen\/ggrybM"},{"id":"rainbow_grid","name":"Rainbow Grid","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783909325,"rating":4,"author":"Jack Rugile","contributors":"Matei Copot","year":"2015","info_url":"https:\/\/codepen.io\/jackrugile\/details\/bdwvMo\/"},{"id":"rainbow_flowfield","name":"Rainbow Flowfield","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783899529,"rating":3,"author":"Fabian Kober","year":"2017","info_url":"https:\/\/openprocessing.org\/sketch\/406819"},{"id":"protonic_lines","name":"Protonic Lines","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780519616,"rating":3,"info_url":"http:\/\/drawcall.github.io\/Proton\/"},{"id":"pixel_arts","name":"Pixel Arts","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648767257466,"rating":3,"author":"Tiffany Rayside","year":"2015","info_url":"https:\/\/codepen.io\/tmrDevelops\/pen\/zGyXXK"},{"id":"particules_effect","name":"Particules Effect","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765949608,"rating":4,"author":"Michael Phipps","year":"2018","info_url":"https:\/\/codepen.io\/michaelphipps\/pen\/JeqZLW"},{"id":"particules_flight","name":"Particules Flight","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648765965788,"rating":4,"author":"Nate Wiley","year":"2015","info_url":"https:\/\/codepen.io\/natewiley\/pen\/GJVOVw"},{"id":"particules_fireworks","name":"Particules Fireworks","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765961148,"rating":4,"author":"Mu6k","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/lsS3zc"},{"id":"particule_wave","name":"Particule Wave","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765937326,"rating":3,"author":"Stu Freen","year":"2019","info_url":"https:\/\/codepen.io\/stufreen\/pen\/KOWKBw"},{"id":"particule_flow","name":"Particule Flow","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765905932,"rating":3},{"id":"particule_away","name":"Particule Away","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765883645,"rating":3},{"id":"particleline","name":"Particleline","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765878827,"rating":2,"author":"Todaylg","year":"2017","info_url":"https:\/\/codepen.io\/todaylg\/pen\/GOwdWM"},{"id":"orbital_trails","name":"Orbital Trails","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648752949447,"rating":3,"author":"Matei Copot","year":"2016","info_url":"https:\/\/codepen.io\/towc\/pen\/yVdKga"},{"id":"neural_network","name":"Neural Network","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648746093940,"rating":4,"author":"Matei Copot","year":"2016","info_url":"https:\/\/codepen.io\/towc\/pen\/wGjXGY"},{"id":"neon_marble","name":"Neon Marble","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745686907,"rating":3,"author":"R21nomi","year":"2018","info_url":"https:\/\/codepen.io\/r21nomi\/pen\/qMWreQ"},{"id":"neon_hexagon","name":"Neon Hexagon","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745667662,"rating":3,"author":"Matei Copot","year":"2015","info_url":"https:\/\/codepen.io\/towc\/pen\/mJzOWJ"},{"id":"magnetic_field_recreation","name":"Magnetic Field Recreation","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733965776,"rating":4,"author":"Bas Groothedde","year":"2015","info_url":"https:\/\/codepen.io\/ImagineProgramming\/pen\/LpOJzM"},{"id":"light_emitting_particules","name":"Light Emitting Particules","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648722981320,"rating":5,"author":"Rogier Koppejan","year":"2018","info_url":"https:\/\/codepen.io\/rogierkoppejan\/pen\/eVGKJY"},{"id":"lavos","name":"Lavos","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648696603803,"rating":4,"author":"Toshiya Marukubo","year":"2021","info_url":"https:\/\/codepen.io\/toshiya-marukubo\/pen\/mdwVGvg"},{"id":"happy_diwali_fireworks","name":"Happy Diwali Fireworks","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648666000858,"rating":3,"author":"Piyushslayer","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/Ws3SRS"},{"id":"group_flight","name":"Group Flight","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648665861694,"rating":3},{"id":"gravitational_field","name":"Gravitational Field","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648663333737,"rating":2,"author":"Justin Windle","year":"2013","info_url":"https:\/\/codepen.io\/soulwire\/pen\/begkI"},{"id":"golden_flower","name":"Golden Flower","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648663200578,"rating":5,"author":"Barbara Almeida","year":"2015","info_url":"https:\/\/openprocessing.org\/sketch\/218757"},{"id":"genuary_touch","name":"Genuary Touch","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648653091016,"rating":4,"author":"Liam Egan","year":"2022","info_url":"https:\/\/codepen.io\/shubniggurath\/pen\/VwMXrwb"},{"id":"galactic_orbital","name":"Galactic Orbital","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648652341406,"rating":5,"author":"Tiffany Rayside","year":"2015","info_url":"https:\/\/codepen.io\/tmrDevelops\/pen\/PqQKzJ"},{"id":"foo_parbox","name":"Foo Parbox","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645198397,"rating":3,"author":"Tiffany Rayside","year":"2015"},{"id":"fireworks","name":"Fireworks","preview":"preview.png","contemplative":true,"interactive":false,"offline":false,"listed":true,"version":1648629519719,"rating":3,"author":"Judith Neumann","year":"2015"},{"id":"disconnect_work","name":"Disconnect Work","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648610276800,"rating":4,"author":"Konstantin Makhmutov","year":"2018"},{"id":"discoid","name":"Discoid","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648610259781,"rating":3,"author":"Tiffany Rayside","year":"2016"},{"id":"blue_galaxies","name":"Blue Galaxies","preview":"preview.png","contemplative":true,"interactive":true,"offline":true,"listed":true,"version":1648534374525,"rating":3,"author":"Luca Zampetti","year":"2017","tags":"spiral"},{"id":"cosmic-web","name":"Cosmic Web","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648592455557,"rating":3,"author":"Ryan Thavi","year":"2017"},{"id":"colour_wars","name":"Colour Wars","preview":"preview.png","contemplative":true,"interactive":true,"offline":false,"listed":true,"version":1648591016773,"rating":4,"author":"Tiffany Rayside","year":"2016"},{"id":"cold_plasm","name":"Cold Plasm","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648577423609,"rating":3,"author":"Irwatts","year":"2016"},{"id":"boxed_fireworks","name":"Boxed Fireworks","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648558832174,"rating":3,"author":"Atsushi Tanaka","contributors":"Digitonaut","year":"2018","tags":"firework"},{"id":"blue_mellow","name":"Blue Mellow","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648534517331,"rating":4,"author":"Tiffany Rayside","year":"2015"},{"id":"big-boi_particules","name":"Big-Boi Particules","preview":"preview.png","contemplative":true,"interactive":true,"offline":true,"listed":true,"version":1648518361259,"rating":4,"author":"Liam Egan","year":"2021","info_url":"https:\/\/codepen.io\/shubniggurath\/details\/oNeErob","description":"Made of 16,384 big-boi particles"},{"id":"big_eye","name":"Big Eye","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648518259461,"rating":3,"author":"Stefan Gustavson"},{"id":"alphabet_roulette","name":"Alphabet Roulette","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648466349991,"rating":3,"author":"Kenji Saito","year":"2017","info_url":"https:\/\/codepen.io\/kenjiSpecial\/pen\/evpejZ"},{"id":"coalesce_10","name":"Coalesce 10 Phosphorescence","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648577279748,"rating":4,"author":"Liam Egan","year":"2018","tags":"Phosphorescence"},{"id":"coalesce_12","name":"Coalesce 12 Phosphorescence","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648577290513,"rating":4,"author":"Mel Pacheco","year":"2019","tags":"Phosphorescence"},{"id":"coalesce_20","name":"Coalesce 20","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648577294798,"rating":3,"author":"Liam Egan","year":"2019"},{"id":"derivate_noise","name":"Derivate Noise","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648608971474,"rating":3,"author":"Samsy","year":"2015"},{"id":"aether","name":"Aether","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648439975188,"rating":4,"author":"Sean Free","year":"2018","info_url":"https:\/\/codepen.io\/seanfree\/pen\/PxJyEW"},{"id":"attraction","name":"Attraction","preview":"preview.png","contemplative":true,"interactive":true,"offline":true,"listed":true,"version":1648480783967,"rating":3,"author":"Louis Hoebregts","year":"2017","info_url":"https:\/\/codepen.io\/Mamboleoo\/pen\/egbRJd"},{"id":"firefly_flow","name":"Firefly Flow","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648629453893,"rating":3,"author":"Liam Egan","year":"2021"},{"id":"flow_of_particules","name":"Flow of Particules","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648642199110,"rating":3,"author":"Louis Hoebregts","year":"2017"},{"id":"foo_particles","name":"Foo Particles","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645208827,"rating":3,"author":"Tiffany Rayside","year":"2015"},{"id":"gpgpu_particules","name":"GPGPU Particules","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648663231184,"rating":4,"author":"Yoichi Kobayashi","year":"2017","info_url":"https:\/\/codepen.io\/ykob\/pen\/WpNxaR"},{"id":"geometry","name":"Geometry","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648654711223,"rating":4},{"id":"illumine","name":"Illumine","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648670348971,"rating":3,"author":"Tiffany Rayside","year":"2015","info_url":"https:\/\/codepen.io\/tmrDevelops\/pen\/wKLVJr"},{"id":"its_been_a_while","name":"It's been a while","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693043267,"rating":4,"author":"Matei Copot","year":"2016","info_url":"https:\/\/codepen.io\/towc\/pen\/eZpLNG"},{"id":"july_fireworks","name":"July Fireworks","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693403184,"rating":4,"author":"Loktar","year":"2013","info_url":"https:\/\/codepen.io\/loktar00\/pen\/fczsA"},{"id":"linear_water","name":"Linear Water","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648729644630,"rating":3,"author":"Nathan Asdarjian","year":"2020","info_url":"https:\/\/codepen.io\/nhasdarjian\/pen\/dyGLpaG"},{"id":"lines_sphere","name":"Lines Sphere","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648729835434,"rating":4,"info_url":"https:\/\/threejs.org\/examples\/webgl_lines_sphere.html"},{"id":"mobius","name":"Mobius","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648743158268,"rating":4,"author":"Tiffany Rayside","year":"2016","info_url":"https:\/\/codepen.io\/tmrDevelops\/pen\/BjWapG"},{"id":"nsn","name":"NSN","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648746682225,"rating":3,"author":"Tiffany Rayside","year":"2015","info_url":"https:\/\/codepen.io\/tmrDevelops\/pen\/adBYgK"},{"id":"particule_blob_glsl","name":"Particule Blob GLSL","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765889442,"rating":3,"author":"Callum Martin","year":"2018","info_url":"https:\/\/codepen.io\/Callum-Martin\/pen\/zpdEwg"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_particules/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>

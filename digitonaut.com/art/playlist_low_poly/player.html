@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_low_poly/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>Low Poly Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"water_slide","name":"Water Slide","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818741117,"rating":3,"author":"Louis Hoebregts","year":"2016","info_url":"https:\/\/codepen.io\/Mamboleoo\/pen\/LbMOLZ"},{"id":"vintage_labyrinth","name":"Vintage Labyrinth","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818173921,"rating":3},{"id":"terraced_hills","name":"Terraced Hills","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813564719,"rating":4,"author":"Shane","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/MtdSRn"},{"id":"pop_tunnel","name":"Pop Tunnel","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780060175,"rating":4,"author":"WAHa 06x36 ","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/4s2cWm"},{"id":"neon_surprise","name":"Neon Surprise","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745817689,"rating":2,"author":"Piotr Kalinowski","year":"2017","info_url":"https:\/\/codepen.io\/piotrkalinowski\/pen\/peLqaZ"},{"id":"lowpoly_flooded_channel","name":"Lowpoly Flooded Channel","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733200157,"rating":3},{"id":"lowpoly_deepspace","name":"Lowpoly Deepspace","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733044019,"rating":5},{"id":"hot_inferno","name":"Hot Inferno","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648670182735,"rating":4,"author":"Tigrou","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/fsjXDt"},{"id":"geo-escape","name":"Geo-escape","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648653179367,"rating":3},{"id":"fractal_cartoon","name":"Fractal Cartoon","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645423832,"rating":3,"author":"Kali","contributors":"Eiffies, Nyan Cat Cameo"},{"id":"voxel_tunnel","name":"Voxel Tunnel","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818425046,"rating":3,"author":"lsdlive","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/MscBRs"},{"id":"voxel_planet","name":"Voxel Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648818333538,"rating":2,"author":"Mhnewman","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/4tlfDn"},{"id":"triangulated_heightfield_trick","name":"Triangulated Heightfield Trick","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648816818757,"rating":4,"author":"Fizzer","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/XlcBRX"},{"id":"tinypolyworld","name":"Tiny Polyworld","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648814392381,"rating":4,"author":"Zultan","year":"2017","info_url":"https:\/\/codepen.io\/Zultan\/pen\/mwGZBP"},{"id":"sunset_then_sunrise","name":"Sunset Then Sunrise","contemplative":true,"interactive":false,"listed":true,"version":1648831268610,"rating":4,"author":"Robobo 1221","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/Ml2cWG"},{"id":"space_rocket","name":"Space Rocket","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798035473,"rating":3,"author":"Finn OConnor Morberg","year":"2019","info_url":"https:\/\/codepen.io\/recursiveElk\/pen\/rXaoKY"},{"id":"somewhere_in_1993","name":"Somewhere In 1993","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797751602,"rating":4,"author":"Nimitz","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/Md2XDD"},{"id":"solar_flare","name":"Solar Flare","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797725472,"rating":3,"author":"Yusuke Nakaya","year":"2017","info_url":"https:\/\/codepen.io\/YusukeNakaya\/pen\/XaeMvq"},{"id":"rushing_rapid","name":"Rushing Rapid","contemplative":true,"interactive":false,"listed":true,"version":1648822593036,"rating":3,"author":"Yiting Liu","year":"2019","info_url":"https:\/\/codepen.io\/yitliu\/pen\/bJoQLw"},{"id":"random_position","name":"Random Position","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648784032329,"rating":2,"author":"Victor Vergara","year":"2018","info_url":"https:\/\/codepen.io\/vcomics\/pen\/aGorVj"},{"id":"rainbow_power","name":"Rainbow Power","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783924574,"rating":3,"author":"Matei Copot","year":"2015","info_url":"https:\/\/codepen.io\/towc\/pen\/mJwYBO"},{"id":"procedural_planet","name":"Procedural Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780422191,"rating":4,"author":"Kevin Levron","year":"2020","info_url":"https:\/\/codepen.io\/soju22\/pen\/OYvjMp"},{"id":"pond_of_devildom","name":"Pond Of Devildom","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779937685,"rating":3,"author":"R21nomi","year":"2018","info_url":"https:\/\/codepen.io\/r21nomi\/pen\/OBPqyZ"},{"id":"polygonal_terrain_lowpoly","name":"Polygonal Terrain Lowpoly","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779926217,"rating":4},{"id":"lowpoly_summer_ride","name":"Lowpoly Summer Ride","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733409476,"rating":3,"author":"Supervitas","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/wtlGRN"},{"id":"lowpoly_ocean","name":"Lowpoly Ocean","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733228704,"rating":3,"author":"Mipmap","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/Wst3D8"},{"id":"planet_plane","name":"Planet Plane","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648779712183,"rating":4},{"id":"planet_omniscient","name":"Planet Omniscient","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779701888,"rating":4,"author":"Junichiro Horikawa","year":"2020","info_url":"https:\/\/openprocessing.org\/sketch\/873283"},{"id":"piotr_planet","name":"Piotr Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648766854533,"rating":4,"author":"Piotr Kalinowski","year":"2017","info_url":"https:\/\/codepen.io\/piotrkalinowski\/pen\/yMXomv"},{"id":"parallax_plane","name":"Parallax Plane","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765861987,"rating":3,"author":"Jhey","year":"2021","info_url":"https:\/\/codepen.io\/jh3y\/pen\/NWdNMBJ"},{"id":"isometric_city","name":"Isometric City","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648692716598,"rating":4,"author":"Knarkowicz","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/MljXzz"},{"id":"magma","name":"Magma","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733780460,"rating":2},{"id":"lowpoly_foxes","name":"Lowpoly Foxes","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648733206425,"rating":4,"author":"Zultan","year":"2017","info_url":"https:\/\/codepen.io\/Zultan\/pen\/XgorKm"},{"id":"lined_tunnel","name":"Lined Tunnel","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648729649512,"rating":4,"author":"Tobie-Cruze","year":"2021","info_url":"https:\/\/openprocessing.org\/sketch\/1243135"},{"id":"infinite_irish_remix","name":"Infinite Irish Remix","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648683942371,"rating":4,"author":"Lanny","year":"2019","info_url":"https:\/\/codepen.io\/lannymcnie\/pen\/MxPEJz"},{"id":"growing_flowers","name":"Growing Flowers","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648665868606,"rating":3,"author":"Matei Copot","year":"2015","info_url":"https:\/\/codepen.io\/towc\/pen\/zGbjqb"},{"id":"generated_creatures","name":"Generated Creatures","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648652950077,"rating":4,"author":"George Francis","year":"2022","info_url":"https:\/\/codepen.io\/georgedoescode\/pen\/ExwdJZq"},{"id":"galloping_horse","name":"Galloping Horse","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648652348548,"rating":4,"author":"Paul","year":"2021","info_url":"https:\/\/codepen.io\/prisoner849\/pen\/RwVyvJN"},{"id":"flying_stork","name":"Flying Stork","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648644177513,"rating":4,"year":"2011"},{"id":"flying_parrot","name":"Flying Parrot","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648644172227,"rating":4,"author":"Mirada","year":"2011"},{"id":"flying_group","name":"Flying Group","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648644071257,"rating":4,"author":"Mirada","year":"2011"},{"id":"flying_flamingo","name":"Flying Flamingo","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648644067248,"rating":4,"author":"Mirada","year":"2011"},{"id":"flying_cotton","name":"Flying Cotton","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648644062889,"rating":3,"author":"Junichiro Horikawa","year":"2020"},{"id":"flower_in_the_wind","name":"Flower in the wind","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648642203053,"rating":4,"author":"Dillon","year":"2021"},{"id":"flight_through_the_desert","name":"Flight through the desert","contemplative":true,"interactive":false,"listed":true,"version":1648831376521,"rating":3,"author":"Eli Fitch","year":"2016"},{"id":"flight_around","name":"Flight Around","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648629783976,"rating":4,"author":"Scott R McGann","year":"2017"},{"id":"flamingo","name":"Flamingo","contemplative":true,"interactive":false,"listed":true,"version":1648831502092,"rating":4,"author":"Joris van Raaij","year":"2017"},{"id":"delaunay_mosaic","name":"Delaunay Mosaic","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648608952712,"rating":3,"author":"Cecile Lu","year":"2017"},{"id":"colored_fishes","name":"Colored Fishes","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648590078869,"rating":3,"author":"Yuanchuan","year":"2017"},{"id":"city_exploration","name":"City Exploration","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648569236001,"rating":3,"author":"Victor Vergara","year":"2019"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_low_poly/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_city_and_town/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>City and Town Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"urban_city","name":"Urban City","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648817509427,"rating":5,"author":"Yonatan","year":"2021"},{"id":"tunnel_vision","name":"Tunnel Vision","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648817129553,"rating":5,"author":"Baron","year":"2021","info_url":"https:\/\/codepen.io\/b29\/pen\/gOLpMWw"},{"id":"skyline","name":"Skyline","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797346659,"rating":4,"author":"Otavio Good","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/XtsSWs"},{"id":"purpcycle","name":"Purpcycle","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783446025,"rating":4,"author":"Shau","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/MtXfD2"},{"id":"metal_towers","name":"Metal Towers","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648740008966,"rating":2},{"id":"infinitown","name":"Infinitown","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648684214831,"rating":5,"author":"Little Workshop","description":"Originally inspired by city-building video games, Infinitown is an attempt to create a procedural city that feels alive and is fun to watch."},{"id":"flying_time_machine","name":"Flying Time Machine","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648644350092,"rating":3,"author":"Evil Ryu","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/XttBWX"},{"id":"flying_over_the_city","name":"Flying Over The City","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648644165075,"rating":3,"author":"Ilyaev","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/tdjczK"},{"id":"flying_car_blues","name":"Flying Car Blues","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648642356340,"rating":3,"author":"Eiffie","year":"2022","info_url":"https:\/\/www.shadertoy.com\/view\/fdsyWS","description":"Even flying cars have to find parking spots."},{"id":"escape_road","name":"Escape Road","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628066263,"rating":3,"author":"Evil Ryu","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/4lcGWr"},{"id":"coaster_jungle","name":"Coaster Jungle","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648577417017,"rating":4,"author":"Plento","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/tl3fRS"},{"id":"tribute_to_mam","name":"Tribute To Mam","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648816894061,"rating":4,"author":"Leon","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/XlfBR7","description":"Tribute to Marc-Antoine Mathieu"},{"id":"procedural_city","name":"Procedural City","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780342145,"rating":3,"author":"Theun","year":"2016","info_url":"https:\/\/codepen.io\/tjoen\/pen\/RRaWbq"},{"id":"paper_city","name":"Paper City","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648765851437,"rating":3,"author":"NuSan","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/3dSXD1"},{"id":"morning_city","name":"Morning City","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648743340048,"rating":2,"author":"Ollj","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/tdjSWR"},{"id":"city_in_the_rain","name":"City In The Rain","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648569243849,"rating":5,"author":"Reinder","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/Xtf3zn"},{"id":"isometric_city","name":"Isometric City","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648692716598,"rating":4,"author":"Knarkowicz","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/MljXzz"},{"id":"lab_city","name":"Lab City","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648696292838,"rating":4,"author":"Victor Vergara","year":"2018","info_url":"https:\/\/codepen.io\/vcomics\/pen\/aGmoae"},{"id":"gotham-city","name":"Gotham-city","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648663222397,"rating":2,"author":"Dr2","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/XljXR3"},{"id":"glow_city","name":"Glow City","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648662871519,"rating":4,"author":"Mhnewman","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/XlsyWB"},{"id":"extraordinary_city","name":"Extraordinary City","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628350584,"rating":5,"author":"Shane","year":"2017"},{"id":"descent_3D","name":"Descent 3d","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648608981991,"rating":5,"author":"Mhnewman","year":"2019"},{"id":"descent","name":"Descent","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648608976764,"rating":3,"author":"Mhnewman","year":"2015"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_city_and_town/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>

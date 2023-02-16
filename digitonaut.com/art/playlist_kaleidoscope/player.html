@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_kaleidoscope/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>Kaleidoscope Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"quiet_bottom","name":"Quiet Bottom","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783560298,"rating":4,"author":"Gaz","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/Nd3XzB"},{"id":"neon_temple","name":"Neon Temple","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745925623,"rating":4,"author":"Psyreco"},{"id":"my_name_is_julia","name":"My Name Is Julia","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745383691,"rating":4,"author":"Rez","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/XtSXWh"},{"id":"kaleohe","name":"Kaleohe","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648696030282,"rating":3},{"id":"kaleiscop_k","name":"Kaleiscop K","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695976674,"rating":3},{"id":"kaleiscop_j","name":"Kaleiscop J","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695902303,"rating":3},{"id":"kaleiscop_i","name":"Kaleiscop I","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695809261,"rating":3},{"id":"kaleiscop_h","name":"Kaleiscop H","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695744683,"rating":3},{"id":"kaleiscop_g","name":"Kaleiscop G","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695682311,"rating":3},{"id":"kaleiscop_f","name":"Kaleiscop F","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695644409,"rating":3},{"id":"kaleiscop_e","name":"Kaleiscop E","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695590583,"rating":3},{"id":"kaleiscop_d","name":"Kaleiscop D","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695538574,"rating":3},{"id":"kaleiscop_c","name":"Kaleiscop C","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695492664,"rating":3},{"id":"kaleiscop_b","name":"Kaleiscop B","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695445575,"rating":3},{"id":"kaleiscop_a","name":"Kaleiscop A","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695401008,"rating":3},{"id":"kaleidoscopix","name":"Kaleidoscopix","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648695327793,"rating":3,"author":"Mrange","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/7lKSWW"},{"id":"glowing_petals","name":"Glowing Petals","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648662983362,"rating":4,"author":"lsdlive","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/Xs3yRM"},{"id":"cave_kaleidoscope","name":"Cave Kaleidoscope","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648568072437,"rating":4},{"id":"caleidoscopio","name":"Caleidoscopio","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648566781472,"rating":5,"author":"Garabatospr","year":"2020"},{"id":"trippy_circles_kaleidoscope","name":"Trippy Circles Kaleidoscope","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648816906154,"rating":3,"author":"Bastou","year":"2019","info_url":"https:\/\/codepen.io\/erevan\/pen\/zQeZmr"},{"id":"tetradic_harmony","name":"Tetradic Harmony","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813657671,"rating":3,"author":"Liam Egan","year":"2021","info_url":"https:\/\/codepen.io\/shubniggurath\/pen\/RwomLLd"},{"id":"symmetric_waves","name":"Symmetric Waves","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813408500,"rating":3,"author":"Dillon","year":"2021","info_url":"https:\/\/codepen.io\/Dillo\/pen\/jOGwQvp"},{"id":"swirly_doodles","name":"Swirly Doodles","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813317247,"rating":3,"author":"Ben Matthews","year":"2017","info_url":"https:\/\/codepen.io\/tsuhre\/pen\/QqyMgm"},{"id":"spring_variant","name":"Spring Variant","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648798739744,"rating":3,"author":"Bailh","year":"2021","info_url":"https:\/\/codepen.io\/cathbailh\/pen\/XWMMxjd"},{"id":"retro_animas","name":"Retro Animas","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648785765307,"rating":3,"author":"Jacob Foster","year":"2020","info_url":"https:\/\/codepen.io\/Alca\/pen\/gOrQRPz"},{"id":"radiation_vibe","name":"Radiation Vibe","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783752189,"rating":4,"author":"Scott Weaver","year":"2019","info_url":"https:\/\/codepen.io\/sweaver2112\/pen\/VwwqVXX"},{"id":"psychedelic_hexagon","name":"Psychedelic Hexagon","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780553976,"rating":5,"author":"BigWIngs","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/wsl3WB"},{"id":"pretty_hip","name":"Pretty Hip","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780330680,"rating":4,"author":"Hadyn","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/XsBfRW"},{"id":"polygons_and_patterns","name":"Polygons And Patterns","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648779932773,"rating":3,"author":"Vgs","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/lsBSDz"},{"id":"pistils","name":"Pistils","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648766863649,"rating":4,"author":"Bailh","year":"2019","info_url":"https:\/\/codepen.io\/cathbailh\/pen\/jogeNm"},{"id":"phantom_star","name":"Phantom Star","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648766788693,"rating":3,"author":"Kasari 39","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/ttKGDt"},{"id":"octagrams","name":"Octagrams","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648747118276,"rating":4,"author":"Whisky Shusuky","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/tlVGDt"},{"id":"lines_and_circles","name":"Lines And Circles","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648729653822,"rating":3,"author":"Freja","contributors":"Genj Maltes"},{"id":"kali_fractal_variation","name":"Kali Fractal Variation","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648696050454,"rating":3,"author":"Stranger in the Q","year":"2020","info_url":"https:\/\/codepen.io\/strangerintheq\/pen\/KKVoqya"},{"id":"kaleidolines","name":"Kaleidolines","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648693438305,"rating":3,"author":"Oggy","year":"2016","info_url":"https:\/\/openprocessing.org\/sketch\/390974"},{"id":"kaleido_tunnel","name":"Kaleido Tunnel","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693431185,"rating":2,"author":"Zackpudil","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/XtcXWM"},{"id":"hexad_pompon","name":"Hexad Pompon","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648666248782,"rating":2,"author":"Tiffany Rayside","year":"2015","info_url":"https:\/\/codepen.io\/tmrDevelops\/pen\/gPbOwK"},{"id":"golden_flower","name":"Golden Flower","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648663200578,"rating":5,"author":"Barbara Almeida","year":"2015","info_url":"https:\/\/openprocessing.org\/sketch\/218757"},{"id":"fractal_thingy","name":"Fractal Thingy","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646715596,"rating":4,"author":"Klems","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/Xd2Bzw"},{"id":"fractal_soup","name":"Fractal Soup","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646705760,"rating":4,"author":"P Malin","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/lsB3zR"},{"id":"fractal_lines_of_symmetry","name":"Fractal Lines Of Symmetry","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646695899,"rating":4,"author":"Gleurop","year":"2014"},{"id":"fractal_journey","name":"Fractal Journey","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646688935,"rating":3,"author":"Macbooktall","year":"2015"},{"id":"flower_of_life","name":"Flower Of Life","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648642206769,"rating":4,"author":"Xoihazard","year":"2016"},{"id":"darkness","name":"Darkness","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648602204172,"rating":3,"author":"Liam Egan","year":"2020"},{"id":"kaleidoscope","name":"Kaleidoscope","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648693444411,"rating":3,"author":"Jason K. Smith","info_url":"http:\/\/colordodge.com\/"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_kaleidoscope/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>

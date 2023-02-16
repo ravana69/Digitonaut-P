@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from digitonaut.com/art/playlist_fractal/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300;600;800&amp;display=swap" rel="stylesheet"/>
+<title>Fractal Player</title>
+<style>
+* { cursor:none; }
+body {
+	background:#000;
+	color:#FFF;
+	margin:0px;
+	font-family:Blinker;
+	font-weight:400;
+	overflow-y: auto;
+}
+.player {
+	display:none;
+	border:0px;
+	outline:0px;
+	position:fixed;
+	width:100%;height:100%;
+	pointer-events:none;
+}
+.data {
+	display:none;
+}
+.info {
+	position:fixed;
+	left:10px;
+	bottom: 10px;
+	text-align:left;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+.clock {
+	position:fixed;
+	right:10px;
+	bottom: 10px;
+	text-align:right;
+	font-size:20px;
+	display:none;
+	text-shadow:0px 1px 3px rgba(0,0,0,1);
+	user-select:none;
+}
+</style>
+</head>
+<body onload='main()'>
+<iframe class='player'></iframe>
+<div class='data'>[{"id":"saturated_fractal","name":"Saturated Fractal","contemplative":true,"interactive":false,"listed":true,"version":1648822725588,"rating":4},{"id":"the_descent","name":"The Descent","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648813998100,"rating":4,"author":"Rez","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/llBSWh"},{"id":"space_ocean","name":"Space Ocean","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648797948535,"rating":4,"author":"HyPeRbLaH","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/7tlSWX"},{"id":"recoded_fractal_invaders","name":"Recoded Fractal Invaders","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648785224448,"rating":3,"author":"Jared Tarbell","contributors":"Patricio Gonzalez Vivo"},{"id":"my_name_is_julia","name":"My Name Is Julia","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648745383691,"rating":4,"author":"Rez","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/XtSXWh"},{"id":"mandelbrot-paulofalcao","name":"Mandelbrot-paulofalcao","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648734304112,"rating":5,"author":"Paulo Falcao"},{"id":"julialand","name":"Julialand","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693397740,"rating":4,"author":"Lucas Assone","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/wlKGDt"},{"id":"green_zozuar_fractal","name":"Green Zozuar Fractal","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648665749191,"rating":3,"author":"MacSlow","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/3tyfWG"},{"id":"gasket","name":"Gasket","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648652557640,"rating":4,"author":"Shau","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/4tdBDn","description":"Support VR"},{"id":"fractal_gaz_84","name":"Fractal Gaz 84","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646683642,"rating":4,"author":"Gaz","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/Nd3XzH"},{"id":"fractal_gaz_80","name":"Fractal Gaz 80","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645767525,"rating":3,"author":"Gaz","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/NsyGDc"},{"id":"fractal_gaz_79","name":"Fractal Gaz 79","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645658554,"rating":3,"author":"Gaz","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/NsyGWc"},{"id":"fractal_gaz_23","name":"Fractal Gaz 23","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645665361,"rating":3,"author":"Gaz","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/ttdfz2"},{"id":"fractal_configurations","name":"Fractal Configurations","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645507068,"rating":3,"author":"Stb","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/WlBcWc"},{"id":"fractal_cartoon","name":"Fractal Cartoon","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645423832,"rating":3,"author":"Kali","contributors":"Eiffies, Nyan Cat Cameo"},{"id":"fractal_bloom","name":"Fractal Bloom","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648645304224,"rating":3,"author":"Twbompo"},{"id":"digital_coral","name":"Digital Coral","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609913352,"rating":4,"author":"Inigo Quilez","contributors":"Klems","year":"2018"},{"id":"dig_down","name":"Dig Down","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648609683151,"rating":4,"author":"Kali","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/WlycDt"},{"id":"deep_in_the_wood","name":"Deep In The Wood","preview":"preview.png","contemplative":true,"interactive":true,"offline":true,"listed":true,"version":1648608919049,"rating":4},{"id":"blooming_fractal","name":"Blooming Fractal","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648534200296,"rating":4},{"id":"apollonian_dreams","name":"Apollonian Dreams","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648469252159,"rating":4,"author":"Krakel","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/WdfXR4"},{"id":"alien_engine","name":"Alien Engine","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648465416353,"rating":4,"author":"Mrange","year":"2019","info_url":"https:\/\/www.shadertoy.com\/view\/ttt3zX"},{"id":"alien_cave","name":"Alien Cave","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648440202451,"rating":2,"author":"Dave Hoskins","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/ldjGDw"},{"id":"apollonian_III","name":"Apollonian Iii","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648469266977,"rating":4,"author":"Stduhpf","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/llyXDW"},{"id":"bad_mushrooms","name":"Bad Mushrooms","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648518032134,"rating":4,"author":"Eiffie","year":"2021","info_url":"https:\/\/www.shadertoy.com\/view\/ttycW3"},{"id":"simplicity","name":"Simplicity","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648796947166,"rating":4,"author":"Kali","year":"2011","info_url":"http:\/\/www.fractalforums.com\/new-theories-and-research\/very-simple-formula-for-fractal-patterns\/"},{"id":"simple_apollonian_gasket","name":"Simple Apollonian Gasket","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648796894050,"rating":4,"author":"Klems","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/4s2czK"},{"id":"rainbow_fractal_descent","name":"Rainbow Fractal Descent","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648783905031,"rating":5,"author":"Mathmasterzach","year":"2018","info_url":"https:\/\/www.shadertoy.com\/view\/4tGczc"},{"id":"pseudo_knightyan","name":"Pseudo Knightyan","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648780524557,"rating":5,"author":"Eiffie","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/lls3Wf"},{"id":"perception_of_change","name":"Perception Of Change","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648766673414,"rating":4,"author":"Fabrice Neyret","year":"2016","info_url":"https:\/\/www.shadertoy.com\/view\/4tG3Wy"},{"id":"nightmare_of_the_koch","name":"Nightmare of the Koch","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648746407496,"rating":3,"author":"Jagarikin","year":"2017","info_url":"https:\/\/codepen.io\/jagarikin\/pen\/dNZWgJ"},{"id":"night_forest_baobab","name":"Night Forest Baobab","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648746313332,"rating":3,"author":"Fizzer","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/MtfGRB"},{"id":"basic_fractal","name":"Basic Fractal","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648518189580,"rating":4,"author":"Paulo Falcao","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/Mss3Wf"},{"id":"menger_journey","name":"Menger Journey","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648735615452,"rating":3,"author":"Syntopia","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/Mdf3z7"},{"id":"mandelbulb","name":"Mandelbulb","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648734309072,"rating":4,"author":"EvilRyu","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/MdXSWn"},{"id":"mandelbrot_pattern","name":"Mandelbrot Pattern","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648734175220,"rating":5,"author":"Shane","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/ttscWn"},{"id":"kalizulmodul","name":"Kalizulmodul","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648696062630,"rating":3,"author":"Bergi","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/Mtl3R2"},{"id":"julia_shader","name":"Julia Shader","preview":"preview.png","contemplative":true,"interactive":true,"listed":true,"version":1648693307591,"rating":4,"author":"Dillon","year":"2020","info_url":"https:\/\/codepen.io\/Dillo\/pen\/LYGgYVV"},{"id":"julia_traps","name":"Julia Traps","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693314303,"rating":3,"author":"Inigo Quilez","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/4d23WG"},{"id":"julia_set","name":"Julia Set","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648693303439,"rating":3,"author":"Iliya Zhechev","year":"2017","info_url":"https:\/\/codepen.io\/ichko\/pen\/VPKjXE"},{"id":"holy_grail_quest","name":"Holy Grail Quest","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648666410174,"rating":4,"author":"Eiffie","year":"2015","info_url":"https:\/\/www.shadertoy.com\/view\/MtfGWM"},{"id":"full_fire","name":"Full Fire","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648652334688,"rating":4,"author":"Ren an illusionist","year":"2018","info_url":"https:\/\/codepen.io\/RenWorks\/pen\/oQVeWY"},{"id":"fractal_trees","name":"Fractal Trees","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646725362,"rating":5,"author":"Macbooktall","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/llXfRr"},{"id":"fractal_tree","name":"Fractal Tree","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646721704,"rating":5,"author":"Stranger in the Q","year":"2020","info_url":"https:\/\/codepen.io\/strangerintheq\/pen\/XWKXrXa"},{"id":"fractal_traps","name":"Fractal Traps","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646718690,"rating":4,"author":"Kali","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/ws3Bzl"},{"id":"fractal_thingy","name":"Fractal Thingy","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646715596,"rating":4,"author":"Klems","year":"2017","info_url":"https:\/\/www.shadertoy.com\/view\/Xd2Bzw"},{"id":"fractal_sphere","name":"Fractal Sphere","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646712652,"rating":4,"author":"Guil","year":"2014","info_url":"https:\/\/www.shadertoy.com\/view\/4sB3Dc"},{"id":"fractal_speediness","name":"Fractal Speediness","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646709023,"rating":4,"author":"Liam Egan","year":"2018","info_url":"https:\/\/codepen.io\/shubniggurath\/pen\/GQLoqw"},{"id":"fractal_soup","name":"Fractal Soup","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646705760,"rating":4,"author":"P Malin","year":"2013","info_url":"https:\/\/www.shadertoy.com\/view\/lsB3zR"},{"id":"fractal_pyramid","name":"Fractal Pyramid","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646702538,"rating":3,"author":"Bradjamesgrant","year":"2020","info_url":"https:\/\/www.shadertoy.com\/view\/tsXBzS"},{"id":"fractal_planet","name":"Fractal Planet","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646698824,"rating":3,"author":"Peter Liepa","year":"2019"},{"id":"fractal_lines_of_symmetry","name":"Fractal Lines Of Symmetry","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646695899,"rating":4,"author":"Gleurop","year":"2014"},{"id":"fractal_journey","name":"Fractal Journey","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648646688935,"rating":3,"author":"Macbooktall","year":"2015"},{"id":"famous_solid","name":"Famous Solid","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648628587984,"rating":5,"author":"Nimitz","year":"2015"},{"id":"emerging_fractal_tower","name":"Emerging Fractal Tower","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648627518014,"rating":4,"author":"Kali","year":"2015"},{"id":"descompuesto_apollonian","name":"Descompuesto Apollonian","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648608987337,"rating":5,"author":"Jorge2017a1","year":"2020"},{"id":"deep_fractal_zoom","name":"Deep Fractal Zoom","preview":"preview.png","contemplative":true,"interactive":false,"offline":true,"listed":true,"version":1648608544450,"rating":3,"author":"Jeff Thomas","contributors":"Digitonaut","year":"2019"},{"id":"accidental_fractal","name":"Accidental Fractal","contemplative":true,"interactive":false,"listed":true,"version":1653733612682,"rating":4,"author":"Jason Labbe","year":"2016","info_url":"https:\/\/openprocessing.org\/sketch\/374209"},{"id":"mandelbrot_set","name":"Mandelbrot Set","preview":"preview.png","contemplative":true,"interactive":false,"listed":true,"version":1648734183408,"rating":2,"author":"Dillon","year":"2021","info_url":"https:\/\/codepen.io\/Dillo\/pen\/WNZvXpy"}]</div>
+<div class='clock'></div>
+<div class='info'></div>
+<script>
+var QS = document.querySelector.bind(document);
+var data = JSON.parse(QS('.data').innerText);
+var pointer = 0;
+var max = data.length;
+var show_clock = false;
+var show_info = false;
+var start = new Date();
+
+function main() {
+	window.onkeyup = function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if(key === 49 || key === 37) { // LEFT or 1
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_prev();
+		}
+		if(key === 50 || key === 39) { // RIGHT or 2
+			autoplay = false;
+			show_clock = true;
+			show_info = true;
+			QS('.clock').style.display = 'block';
+			QS('.info').style.display = 'block';
+			player_next();
+		}
+		if(key === 51 || key === 40) { // DOWN or 3
+		}
+		if(key === 52 || key === 38) { // UP or 4
+		}
+	}
+	player_play();
+	QS('.player').style.display = 'block';
+	setInterval(function() {
+		if(autoplay) {
+			player_next();
+		}
+	}, 60000)
+	setInterval(function() {
+		player_loop();
+	}, 250);
+}
+
+var autoplay = true;
+
+function player_next() {
+	if(++pointer >= max) pointer = 0;
+	player_play();
+}
+function player_prev() {
+	if(--pointer < 0) pointer = max - 1;
+	player_play();
+}
+function player_play() {
+	var info = data[pointer].name;
+	info += (typeof data[pointer].author === 'undefined' || data[pointer].author === '' ? '' : " - " + data[pointer].author);
+	info += (typeof data[pointer].year === 'undefined' || data[pointer].year === '' ? '' : " ("+data[pointer].year+")");
+	info += " - ";
+	info += data[pointer].rating < 1 ? '☆' : '★';
+	info += data[pointer].rating < 2 ? '☆' : '★';
+	info += data[pointer].rating < 3 ? '☆' : '★';
+	info += data[pointer].rating < 4 ? '☆' : '★';
+	info += data[pointer].rating < 5 ? '☆' : '★';
+	QS('.info').innerHTML = info;
+	start = new Date();
+	QS('.player').contentWindow.document.location.replace('../' + data[pointer].id + '/');
+}
+function player_loop() {
+	if(show_clock) {
+		//var now = new Date();
+		var delta = new Date(new Date() - start);
+		QS('.clock').innerHTML = delta.getUTCHours() + ':' + delta.getUTCMinutes() + ':' + delta.getUTCSeconds();
+	}
+}
+</script>
+</body>
+
+<!-- Mirrored from digitonaut.com/art/playlist_fractal/player.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Feb 2023 10:59:42 GMT -->
+</html>
